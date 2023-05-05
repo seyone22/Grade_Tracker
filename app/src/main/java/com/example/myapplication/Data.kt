@@ -22,7 +22,7 @@ data class Module(
     @ColumnInfo(name = "grade") var grade: String,
     @ColumnInfo(name = "mark") var mark: Int = 0,
     @ColumnInfo(name = "semester") var semester: Int = 1,
-    @ColumnInfo(name = "year") var year: Int = 1) : Serializable {}
+    @ColumnInfo(name = "year") var year: Int = 1) : Serializable
 
 @Dao
 interface ModuleDao {
@@ -40,7 +40,7 @@ interface ModuleDao {
 }
 
 @Database(entities = [Module::class], version = 1)
-public abstract class AppDatabase : RoomDatabase() {
+abstract class AppDatabase : RoomDatabase() {
     abstract fun moduleDao(): ModuleDao
 
     companion object {
