@@ -135,9 +135,8 @@ fun ShowLandingPage(database : AppDatabase) {
             confirmButton = {
                 Button(onClick = {
                     // 4. Add the new subject to the subjects list
-                    var modul = Module(textField1, textField2, textField3)
-                    subjectDao.updateModule(modul)
-                    subjects.add(modul)
+                    subjectDao.updateModule(Module(textField1, textField2, textField3))
+                    subjects.add(Module(textField1, textField2, textField3))
                     showDialog = false
                 }) {
                     Text("OK")
